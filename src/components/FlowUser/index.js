@@ -3,12 +3,14 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
-import { Button, Modal, Spin } from 'antd/es';
-import { UserOutlined } from '@ant-design/icons';
+import { Button, Modal, Spin, Tooltip, Space } from 'antd/es';
+import { UserOutlined, CloudSyncOutlined, LogoutOutlined } from '@ant-design/icons';
 
 import 'antd/es/button/style/css';
 import 'antd/es/modal/style/css';
 import 'antd/es/spin/style/css';
+import 'antd/es/tooltip/style/css';
+import 'antd/es/space/style/css';
 
 import './style.css';
 
@@ -50,13 +52,30 @@ const FlowUser = () => {
     );
   else if (isSignedIn)
     return (
-      <Button
-        className='user'
-        type='dashed'
-        shape='round'
-        icon={<UserOutlined />}
-        onClick={() => firebase.auth().signOut()}
-      >Welcome {firebase.auth().currentUser.displayName} | Sign Out</Button>
+      <Space className='user'>
+        <Button
+          type='primary'
+          shape='round'
+          icon={<UserOutlined />}
+        >Welcome {firebase.auth().currentUser.displayName}</Button>
+
+        <Button
+          type='dashed'
+          shape='round'
+          icon={<CloudSyncOutlined />}
+          disabled
+        >Sync to Cloud</Button>
+
+        <Tooltip title="Sign Out">
+          <Button
+            type='dashed'
+            shape='circle'
+            icon={<LogoutOutlined />}
+            onClick={() => firebase.auth().signOut()}
+            danger
+          />
+        </Tooltip>
+      </Space>
     );
   else return (
       <div>
