@@ -28,6 +28,7 @@
   "dependencies": {
     "@ant-design/icons": "^4.0.6",
     "antd": "^4.1.4",
+    "firebase": "^8.2.4",
     "gg-editor": "^2.0.3",
     "html-to-image": "^0.1.1",
     "react": "^16.13.1",
