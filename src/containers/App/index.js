@@ -17,6 +17,7 @@ import FlowCanvas from '../../components/FlowCanvas';
 import FlowItemPanel from '../../components/FlowItemPanel';
 import FlowDetailPanel from '../../components/FlowDetailPanel';
 import FlowMiniMap from '../../components/FlowMiniMap';
+import FlowUser from '../../components/FlowUser';
 import ExportCanvas from '../../components/ExportCanvas';
 
 GGEditor.setTrackable(false);
@@ -49,6 +50,7 @@ const App = () => {
             <ExportCanvas />
             <FlowToolbar />
             <FlowCanvas />
+            <FlowUser />
           </Col>
           <Col span={5}>
             <FlowDetailPanel />

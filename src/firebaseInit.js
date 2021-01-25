@@ -3,7 +3,7 @@ import 'firebase/analytics';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyCaKWFZTbk9gUY6OWau3npgCQHzF_h0TgQ',
-  authDomain: 'wireflow-project.firebase.com',
+  authDomain: 'wireflow-project.firebaseapp.com',
   databaseURL: 'https://wireflow-project-default-rtdb.firebaseio.com',
   projectId: 'wireflow-project',
   storageBucket: 'wireflow-project.appspot.com',
